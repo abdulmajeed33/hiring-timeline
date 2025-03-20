@@ -1,0 +1,281 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+#total-payroll {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+#date-range {
+    font-size: 14px;
+    color: #333;
+    margin-top: 0;
+}
+
+#timeline-chart {
+    position: relative;
+    margin-bottom: 0;
+    height: 120px;
+}
+
+#payroll-chart {
+    position: relative;
+    margin-top: -10px;
+}
+
+.instruction-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    line-height: 1.5;
+}
+
+.drag-arrow, .plus-icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.timeline {
+    stroke: #ccc;
+    stroke-width: 1px;
+}
+
+.timeline-point {
+    cursor: pointer;
+    fill: #4285F4;
+}
+
+.month-label {
+    font-size: 12px;
+    fill: #333;
+}
+
+.emoji {
+    font-size: 24px;
+}
+
+.role-label {
+    font-size: 10px;
+    fill: #333;
+}
+
+.y-axis-label {
+    font-size: 12px;
+    fill: #333;
+}
+
+.bar-filled {
+    fill: #c45a5a;
+}
+
+.bar-outline {
+    fill: white;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.warning-icon {
+    fill: #f0ad4e;
+    font-size: 16px;
+}
+
+svg {
+    overflow: visible;
+}
+
+.x-axis text, .y-axis text {
+    font-size: 12px;
+}
+
+.drag-instructions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+.drag-instructions span {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.axis text {
+    font-size: 12px;
+}
+
+.role-icon {
+    font-size: 24px;
+    text-align: center;
+}
+
+.bar-unfilled {
+    fill: #e0e0e0;
+    stroke: #ccc;
+    stroke-width: 1px;
+}
+
+.timeline-line {
+    stroke: #aaa;
+    stroke-width: 2px;
+}
+
+/* Make sure the plot container is properly styled */
+.plot-d6a7b5 {
+    --plot-background: white;
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.plot-d6a7b5 text, 
+.plot-d6a7b5 tspan {
+    white-space: pre;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 10;
+    max-width: 250px;
+}
+
+.drag-connector {
+    pointer-events: none;
+    stroke-dasharray: 4;
+    animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -8;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+.timeline-click-area:hover {
+    stroke: #4285F4;
+    stroke-width: 1px;
+    stroke-opacity: 0.3;
+}
+
+.role-group {
+    transition: transform 0.2s ease-out;
+}
+
+.bar-filled, .bar-outline {
+    transition: opacity 0.2s ease;
+}
+
+.bar-filled:hover, .bar-outline:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+} 
